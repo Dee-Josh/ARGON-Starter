@@ -71,12 +71,6 @@ export default function Index() {
         setHabits(updatedHabits)
       })
     }
-
-    // const newStreakCount = habits[id].streak_count++;
-    // setHabits(habits.map((habit)=>(
-    //   habit.id === id ? {...habit, streak_count: newStreakCount} : habit
-    // )));
-    // setHabits(updated)
   }
 
 
@@ -98,7 +92,7 @@ export default function Index() {
       style={styles.container}
     >
       <View style={styles.header}>
-        <Text variant="headlineSmall" style={styles.title}>Today's Habits {today}</Text>
+        <Text variant="headlineSmall" style={styles.title}>Today's Habits</Text>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}>
