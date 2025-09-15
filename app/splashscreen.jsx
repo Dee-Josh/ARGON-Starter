@@ -9,7 +9,7 @@ export default function CustomSplash() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.replace("/loading");
+      // router.replace("/loading");
     }, 5000); // 3s splash screen
 
     return () => clearTimeout(timer);
@@ -20,7 +20,7 @@ export default function CustomSplash() {
       <Image
         source={require("./splash.png")}
         style={styles.image}
-        resizeMode="stretch"
+        resizeMode="contain"
       />
     </View>
   );
