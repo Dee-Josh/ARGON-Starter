@@ -48,9 +48,9 @@ export default function RootLayout() {
         <SafeAreaProvider>
           {/* <RouteGuard> */}
           <Stack screenOptions={{headerShown: false}}>
-            {/* <Stack.Screen  name={!isAuth ? "login" : "(tabs)" } options={{headerShown: false}} /> */}
+            <Stack.Screen  name={!isAuth ? "login" : "(tabs)" } options={{headerShown: false}} />
             {/* <Stack.Screen name="(tabs)" options={{headerShown: false}} /> */}
-            <Stack.Screen name="splashscreen" options={{headerShown: false}} />
+            {/* <Stack.Screen name="splashscreen" options={{headerShown: false}} /> */}
           </Stack>
           {/* </RouteGuard> */}
         </SafeAreaProvider>
