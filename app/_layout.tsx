@@ -39,7 +39,7 @@ export default function RootLayout() {
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hideAsync(); // hide native splash shortly after load
-    }, 500); // avoid flicker
+    }, 3000); // avoid flicker
   }, []);
 
   return(
