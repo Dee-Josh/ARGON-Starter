@@ -4,7 +4,7 @@
     "slug": "ARGON-starter",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/argon.png",
+    "icon": "./assets/argon-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -14,7 +14,7 @@
     "android": {
       "package": "com.ARGON-starter.ARGON-starter",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/argon.png",
+        "foregroundImage": "./assets/argon-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
@@ -22,15 +22,15 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/argon.png"
+      "favicon": "./assets/argon-icon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/argon.png",
-          "imageWidth": 200,
+          "image": "./assets/splash.png",
+          "imageWidth": 597,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }

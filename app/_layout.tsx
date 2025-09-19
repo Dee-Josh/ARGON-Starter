@@ -33,8 +33,6 @@ const isAuth = true;
 
 
 export default function RootLayout() {
-
-  // const [isAuth, setIsAuth] = useState(false);
   // Use code from chatgpt to update the splashscreen and the authentication screen display logic --- not the one below
   useEffect(() => {
     setTimeout(() => {
