@@ -1,10 +1,9 @@
+import { AuthProvider, useAuth } from "@/lib/context/AuthContext";
 import { Stack, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { AuthProvider, useAuth } from "@/lib/context/AuthContext";
 import { useEffect } from "react";
-import { HeaderShownContext } from "@react-navigation/elements";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,7 +36,7 @@ export default function RootLayout() {
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hideAsync();
-    }, 10000); 
+    }, 1000); 
   }, []);
 
   return(
