@@ -36,8 +36,8 @@ export default function RootLayout() {
   // Use code from chatgpt to update the splashscreen and the authentication screen display logic --- not the one below
   useEffect(() => {
     setTimeout(() => {
-      SplashScreen.hideAsync(); // hide native splash shortly after load
-    }, 3000); // avoid flicker
+      SplashScreen.hideAsync();
+    }, 10000); 
   }, []);
 
   return(
