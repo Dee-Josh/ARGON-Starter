@@ -94,7 +94,7 @@ export default function StreaksScreen() {
       },
       streak: "",
       bestStreak: "",
-      total: 0
+      total: 0,
     },
 
   ];
