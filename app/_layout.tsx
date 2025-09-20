@@ -19,7 +19,7 @@ function RouteGuard({children}: {children: React.ReactNode}){
     if(!user && !inAuthGroup && !isLoadingUser){
       router.replace("/login");
     }else if(user && inAuthGroup && !isLoadingUser){
-      router.replace("/");
+      // router.replace("/");
     } 
   }), [user, segments];
   
@@ -47,7 +47,8 @@ export default function RootLayout() {
           <Stack screenOptions={{headerShown: false}}>
             {/* <Stack.Screen  name={!isAuth ? "login" : "(tabs)" } options={{headerShown: false}} /> */}
             {/* <Stack.Screen name="(tabs)" options={{headerShown: false}} /> */}
-            <Stack.Screen name="(onboarding)" options={{headerShown: false}} />
+            {/* <Stack.Screen name="(onboarding)" options={{headerShown: false}} /> */}
+            <Stack.Screen name="streaks" options={{headerShown: false}} />
           </Stack>
           {/* </RouteGuard> */}
         </SafeAreaProvider>
