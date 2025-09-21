@@ -1,43 +1,46 @@
 import { AuthProvider, useAuth } from "@/lib/context/AuthContext";
-import { Stack, useRouter, useSegments } from "expo-router";
+import { Stack, useRouter, useSegments, Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { checkFirstLaunch } from "../lib/onboarding";
 
 SplashScreen.preventAutoHideAsync();
 
 
-function RouteGuard({children}: {children: React.ReactNode}){
-  const router = useRouter();
-  const {user, isLoadingUser} = useAuth();
-  const segments = useSegments();
-
-
-  // useEffect(()=>{
-  //   const inAuthGroup = segments[0] === "login";
-  //   if(!user && !inAuthGroup && !isLoadingUser){
-  //     router.replace("/login");
-  //   }else if(user && inAuthGroup && !isLoadingUser){
-  //     // router.replace("/");
-  //   } 
-  // }), [user, segments];
-  
-
-  return <>{children}</>
-} // - find the alternative for this in JS
-
-const isAuth = true;
-
 
 
 export default function RootLayout() {
-  // Use code from chatgpt to update the splashscreen and the authentication screen display logic --- not the one below
+  const router = useRouter();
+  const [checking, setChecking] = useState(true);
+  const { user } = useAuth();
+
+  
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hideAsync();
-    }, 1000); 
+    }, 5000); 
+
+    async function decideStart() {
+      const firstLaunch = await checkFirstLaunch();
+
+      if (firstLaunch) {
+        router.replace("/onboarding/onboarding1");
+      } else if (!user) {
+        router.replace("/auth/LogIn");
+      } else {
+        router.replace("/(tabs)");
+      }
+
+      setChecking(false);
+    }
+
+    decideStart();
+
   }, []);
+
+  if (checking) return null; // or show splash/loading
 
   return(
     <GestureHandlerRootView style={{flex: 1}}>
