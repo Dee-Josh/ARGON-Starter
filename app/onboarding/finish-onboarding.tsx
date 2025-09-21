@@ -9,4 +9,11 @@ export default function FinishOnboarding() {
     await markOnboardingComplete();
     router.replace("/auth/LogIn");
   };
+
+  return (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text style={{ fontSize: 20 }}>You're all set!</Text>
+      <Button title="Get Started" onPress={handleFinish} />
+    </View>
+  );
 }

@@ -60,7 +60,7 @@ export default function LogIn() {
                 setTempErrDisplay(error);
                 return
             }
-            router.replace("/")
+            router.replace("/(tabs)")
         }else{
             const error = await signIn(email, password);
             if (error){
