@@ -14,14 +14,14 @@ function RouteGuard({children}: {children: React.ReactNode}){
   const segments = useSegments();
 
 
-  useEffect(()=>{
-    const inAuthGroup = segments[0] === "login";
-    if(!user && !inAuthGroup && !isLoadingUser){
-      router.replace("/login");
-    }else if(user && inAuthGroup && !isLoadingUser){
-      // router.replace("/");
-    } 
-  }), [user, segments];
+  // useEffect(()=>{
+  //   const inAuthGroup = segments[0] === "login";
+  //   if(!user && !inAuthGroup && !isLoadingUser){
+  //     router.replace("/login");
+  //   }else if(user && inAuthGroup && !isLoadingUser){
+  //     // router.replace("/");
+  //   } 
+  // }), [user, segments];
   
 
   return <>{children}</>
@@ -43,14 +43,11 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{flex: 1}}>
       <AuthProvider>
         <SafeAreaProvider>
-          {/* <RouteGuard> */}
           <Stack screenOptions={{headerShown: false}}>
             {/* <Stack.Screen  name={!isAuth ? "login" : "(tabs)" } options={{headerShown: false}} /> */}
-            {/* <Stack.Screen name="(tabs)" options={{headerShown: false}} /> */}
+            <Stack.Screen name="(tabs)" options={{headerShown: false}} />
             {/* <Stack.Screen name="(onboarding)" options={{headerShown: false}} /> */}
-            <Stack.Screen name="streaks" options={{headerShown: false}} />
           </Stack>
-          {/* </RouteGuard> */}
         </SafeAreaProvider>
       </AuthProvider>
     </GestureHandlerRootView>

@@ -1,8 +1,8 @@
 import { useAuth } from "@/lib/context/AuthContext";
 import { router } from "expo-router";
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { KeyboardAvoidingView, Platform, StyleSheet, View, } from 'react-native';
-import { Text, TextInput, Button, Provider as PaperProvider } from 'react-native-paper';
+import { Button, Provider as PaperProvider, Text, TextInput } from 'react-native-paper';
 import Toast from 'react-native-toast-message';
 
 
@@ -60,7 +60,7 @@ export default function LogIn() {
                 setTempErrDisplay(error);
                 return
             }
-            router.replace("/(tabs)")
+            router.replace("/")
         }else{
             const error = await signIn(email, password);
             if (error){
