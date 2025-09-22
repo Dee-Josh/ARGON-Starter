@@ -6,7 +6,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function TabsLayout() {
   return(
-    <Tabs screenOptions={{tabBarActiveTintColor: "#009688", headerShadowVisible: false, headerTitleAlign: 'center', headerStyle: {backgroundColor: '#f5f5f5',}}}>
+    <Tabs screenOptions={{tabBarActiveTintColor: "#009688", headerShadowVisible: false, headerTitleAlign: 'center', headerStyle: {backgroundColor: '#f5f5f5',}, animation: "shift"}}>
       <Tabs.Screen 
         name="index" 
         options={{title: 'Home',

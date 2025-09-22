@@ -78,12 +78,12 @@
 
 // NEW TRIAL FROM SCRATCH
 
-import { createContext, useContext, useState, } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
 const AuthContext = createContext<any>(null);
 
-export function AuthProvider(props) {
-  const [user, setUser] = useState(null);
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [user, setUser] = useState<any>();
 
   function login() {
     setUser({ name: "Demo User" }); // Replace with Firebase/Appwrite logic
@@ -95,7 +95,7 @@ export function AuthProvider(props) {
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 }

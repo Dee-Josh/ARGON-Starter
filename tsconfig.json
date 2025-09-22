@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "lib/context/AuthContext.jsx", "app/_layout.tsx"  ]
+, "lib/context/AuthContext.tsx", "app/_layout.tsx"  ]
 }
