@@ -1,15 +1,74 @@
 import { useRouter } from "expo-router";
-import { Button, Text, View } from "react-native";
+import { Image, ImageBackground, StyleSheet, View } from "react-native";
+import { Button, Text } from "react-native-paper";
 
 export default function OnboardingScreen1() {
   const router = useRouter();
   console.log('Onboarding1 mounted');
-  
+
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: 'green' }}>
-      <Text style={{ fontSize: 24, color: 'black' }}>Welcome to ARGON!</Text>
-      <Button title="Next" onPress={() => router.push("/onboarding/onboarding2")} />
+    <View style={styles.container}>
+      <ImageBackground source={require('@/assets/gradient-bg.png')} resizeMode="cover" style={styles.imageBgc}>
+        <Image source={require("@/assets/argon-logo.png")} style={styles.argonLogo} />
+        <Text style={styles.argonText}>ARGON</Text>
+        {/* <Text style={styles.description}>All-Round Giants Outstanding Network</Text> */}
+        <Text style={styles.sloganText}>Raising Balanced Giants</Text>
+
+        <Button mode="contained" style={styles.button} onPress={() => router.replace("/onboarding/onboarding2")}><Text style={styles.buttonText}>Get Started</Text></Button>
+      </ImageBackground>
     </View>
   );
 }
+
+const colors = {
+  green: '#58B65A',
+  darkBlue: '#1B242D',
+  white: '#FFF',
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    // justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: '#fff',
+  },
+  imageBgc: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: '100%'
+  },
+  argonLogo: {
+    height: 320,
+    width: 280,
+    resizeMode: 'contain',
+    marginRight: 1
+  },
+  argonText: {
+    color: colors.darkBlue,
+    fontWeight: 'bold',
+    fontSize: 50,
+    marginTop: 30,
+  },
+  description: {
+    fontWeight: 'bold',
+  },
+  sloganText: {
+    color: colors.darkBlue,
+    fontSize: 24,
+    marginTop: 10,
+  },
+  button: {
+    backgroundColor: colors.green,
+    width: '80%',
+    marginTop: 120,
+    paddingVertical: 8,
+    borderRadius: 100
+  },
+  buttonText: {
+    color: colors.white,
+    fontSize: 24,
+  },
+})

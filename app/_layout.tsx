@@ -1,12 +1,11 @@
 import { AuthProvider } from "@/lib/context/AuthContext";
-import { Slot, useRouter, useSegments } from "expo-router";
+import { Slot, Stack, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState, } from "react";
-import { Image, useColorScheme } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { useColorScheme  } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { checkFirstLaunch } from "../lib/onboarding";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -47,29 +46,35 @@ export default function RootLayout() {
   // FOR DECIDING WHERE TO START (ROUTE GUARD)
   const [checking, setChecking] = useState(true);
 
-  useEffect(() => {
-    let isMounted = true;
-    async function decideStart() {
-      const firstLaunch = await checkFirstLaunch();
-      console.log("Redirecting becuase firstlaunch =", firstLaunch);
-      if (!isMounted) return;
+  // useEffect(() => {
+  //   let isMounted = true;
+  //   async function decideStart() {
+  //     const firstLaunch = await checkFirstLaunch();
+  //     console.log("Redirecting becuase firstlaunch =", firstLaunch);
+  //     if (!isMounted) return;
 
-      if (firstLaunch) {
-        router.replace("/onboarding/onboarding1");
-        // firstLaunch = 
-      } else if (!user) {
-        router.replace("/auth/LogIn");
-      } else {
-        router.replace("/(tabs)");
-      }
-      setChecking(false);
-    }
-    decideStart();
-    return () => { isMounted = false}
-  }, []);
+  //     if (firstLaunch) {
+  //       router.replace("/onboarding/onboarding1");
+  //       // firstLaunch = 
+  //     } else if (!user) {
+  //       router.replace("/auth/LogIn");
+  //     } else {
+  //       router.replace("/(tabs)");
+  //     }
+  //     setChecking(false);
+  //   }
+  //   decideStart();
+  //   return () => { isMounted = false}
+  // }, []);
 
 
-  if (checking) return <Image source={require('../assets/splash.png')} style={{ resizeMode: 'cover', height: "auto" }} />; // or show splash/loading
+  // if (checking) return <Image source={require('../assets/splash.png')} style={{ resizeMode: 'cover', height: "auto" }} />; // or show splash/loading
+
+  // useEffect(()=>{
+  //   if(user){
+  //     router.replace('/onboarding/onboarding1')
+  //   }
+  // }, [])
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
@@ -77,7 +82,12 @@ export default function RootLayout() {
         <ThemeContext.Provider value={{ isDark, toggleTheme }} >
           <AuthProvider>
             <StatusBar style={isDark ? "light" : "dark"} />
-            <Slot />
+            {/* <Slot /> */}
+            <Stack screenOptions={{headerShown: false}}>
+              <Stack.Screen name="onboarding" options={{headerShown: false}} />
+              <Stack.Screen name="auth" options={{headerShown: false}} />
+              <Stack.Screen name="(tabs)" options={{headerShown: false}} />
+            </Stack>
           </AuthProvider>
         </ThemeContext.Provider>
       </SafeAreaProvider>
