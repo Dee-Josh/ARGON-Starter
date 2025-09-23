@@ -1,10 +1,11 @@
 import { useAuth } from "@/lib/context/AuthContext";
 import { router } from "expo-router";
 import React, { useState } from "react";
-import { KeyboardAvoidingView, Platform, StyleSheet, View, ImageBackground, Image } from 'react-native';
-import { Button, Provider as PaperProvider, Text, TextInput } from 'react-native-paper';
+import { Image, ImageBackground, KeyboardAvoidingView, Platform, StyleSheet, View, Pressable } from 'react-native';
+import { Provider as PaperProvider, Text, TextInput, Button } from 'react-native-paper';
 import Toast from 'react-native-toast-message';
-import { Colors } from "react-native/Libraries/NewAppScreen";
+
+// later you can return button to react native paper and use button instead of pressable
 
 
     const colors = {
@@ -97,7 +98,7 @@ export default function LogIn() {
                         </Text>
                         <TextInput
                             // label="Name"
-                            placeholder="John Doe"
+                            placeholder="Name"
                             keyboardType="default"
                             mode="outlined"
                             autoCapitalize="none"
@@ -112,7 +113,8 @@ export default function LogIn() {
                         />
                         <TextInput
                             // label="Email"
-                            placeholder="example@gmail.com"
+                            placeholder="Email"
+                            // placeholder="example@gmail.com"
                             keyboardType="email-address"
                             mode="outlined"
                             autoCapitalize="none"
@@ -141,7 +143,7 @@ export default function LogIn() {
                             onChangeText={updatePassword}
                         />
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
-                        <Button textColor="black" style={styles.googleBtn} mode="outlined" onPress={() => {}}>Continue with Google</Button>
+                        <Pressable style={styles.googleBtn} onPress={() => {}}><Text style={{fontSize: 16}}>Continue with Google</Text></Pressable>
                          <Button textColor="#009688" onPress={() => {
                             setIsSignUp(!isSignUp);
                         }}
@@ -152,7 +154,7 @@ export default function LogIn() {
                             // router.replace("/(tabs)");
                             // router.navigate("/(tabs)");
                             handleAuth();
-                        }}>{isSignUp ? "Sign Up" : "Sign In"}</Button>
+                        }}><Text style={{fontWeight: 'bold', color: '#fff', fontSize: 22}}>{isSignUp ? "Sign Up" : "Sign In"}</Text></Button>
                        
                     </View>
                 </KeyboardAvoidingView>
@@ -194,10 +196,16 @@ const styles = StyleSheet.create({
     },
     btn: {
         marginTop: 20,
-        backgroundColor: colors.green
+        backgroundColor: colors.green,
+        height: 100
     },
     googleBtn: {
         backgroundColor: '#f5f5f5',
-        paddingVertical: 5,
+        paddingVertical: 10,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: '#999999',
+        alignItems: 'center',
+
     },
 })
