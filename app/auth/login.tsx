@@ -40,6 +40,7 @@ export default function LogIn() {
     const [password, updatePassword] = useState("");
     const [error, setError] = useState("");
     const [tempErrDisplay, setTempErrDisplay] = useState("");
+    const [isInputFocused, setIsInputFocused] = useState(false);
 
 
     const { signIn, signUp } = useAuth();
@@ -101,8 +102,10 @@ export default function LogIn() {
                             placeholder="Name"
                             keyboardType="default"
                             autoCapitalize="none"
-                            style={styles.input}
+                            style={[styles.input, isInputFocused&&styles.isFocused]}
                             onChangeText={updateEmail}
+                            // onFocus={()=>{setIsInputFocused(true)}}
+            
                         />
                         <TextInput
                             // label="Email"
@@ -121,19 +124,20 @@ export default function LogIn() {
                             style={styles.input}
                             onChangeText={updatePassword}
                         />
+                        <View><Text>Forgot Password</Text></View>
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
                         <Pressable style={styles.googleBtn} onPress={() => {}}><Text style={{fontSize: 16}}>Continue with Google</Text></Pressable>
-                         <Button textColor="#009688" onPress={() => {
+                        <Button style={styles.haveAccount} textColor={colors.darkBlue}onPress={() => {
                             setIsSignUp(!isSignUp);
                         }}
                         >
                             {isSignUp ? "Already have an account? Sign In." : "Don't have an account? Sign Up."}
                         </Button>
-                        <Button style={styles.btn} mode="contained" onPress={() => {
+                        <Pressable style={styles.btn} onPress={() => {
                             // router.replace("/(tabs)");
                             // router.navigate("/(tabs)");
                             handleAuth();
-                        }}><Text style={{fontWeight: 'bold', color: '#fff', fontSize: 22}}>{isSignUp ? "Sign Up" : "Sign In"}</Text></Button>
+                        }}><Text style={{fontWeight: 'bold', color: '#fff', fontSize: 20}}>{isSignUp ? "Sign Up" : "Log In"}</Text></Pressable>
                        
                     </View>
                 </KeyboardAvoidingView>
@@ -169,28 +173,34 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     input: {
-        marginBottom: 15,
+        marginBottom: 18,
         borderWidth: 1,
         borderColor: "#999",
         backgroundColor: '#f5f5f5',
         borderRadius: 10,
-        paddingTop: 15,
-        paddingBottom: 15,
-        paddingHorizontal: 15,
+        padding: 18,
         fontSize: 16,
     },
-    btn: {
-        marginTop: 20,
-        backgroundColor: colors.green,
-        height: 100
+    isFocused: {
+        borderColor: colors.green,
     },
     googleBtn: {
         backgroundColor: '#f5f5f5',
-        paddingVertical: 15,
+        paddingVertical: 18,
         borderWidth: 1,
         borderRadius: 10,
         borderColor: '#999999',
         alignItems: 'center',
-
+    },
+    haveAccount: {
+        marginTop: 5,
+        // textDecorationLine: 'underline',
+    },
+    btn: {
+        marginTop: 30,
+        backgroundColor: colors.green,
+        paddingVertical: 12,
+        borderRadius: 100,
+        alignItems: 'center',
     },
 })
