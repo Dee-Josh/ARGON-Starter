@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import { KeyboardAvoidingView, Platform, StyleSheet, View, ImageBackground, Image } from 'react-native';
 import { Button, Provider as PaperProvider, Text, TextInput } from 'react-native-paper';
 import Toast from 'react-native-toast-message';
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
-
-// LOGIN AND SIGN UP SCREEN
-export default function LogIn() {
 
     const colors = {
         green: '#58B65A',
@@ -15,6 +13,10 @@ export default function LogIn() {
         white: '#FFF',
     }
 
+
+
+// LOGIN AND SIGN UP SCREEN
+export default function LogIn() {
 
     function showToast(type: string, error: string) {
         Toast.show({
@@ -140,6 +142,12 @@ export default function LogIn() {
                         />
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
                         <Button textColor="black" style={styles.googleBtn} mode="outlined" onPress={() => {}}>Continue with Google</Button>
+                         <Button textColor="#009688" onPress={() => {
+                            setIsSignUp(!isSignUp);
+                        }}
+                        >
+                            {isSignUp ? "Already have an account? Sign In." : "Don't have an account? Sign Up."}
+                        </Button>
                         <Button style={styles.btn} mode="contained" onPress={() => {
                             // router.replace("/(tabs)");
                             // router.navigate("/(tabs)");
@@ -186,7 +194,7 @@ const styles = StyleSheet.create({
     },
     btn: {
         marginTop: 20,
-        backgroundColor: '#009688'
+        backgroundColor: colors.green
     },
     googleBtn: {
         backgroundColor: '#f5f5f5',
