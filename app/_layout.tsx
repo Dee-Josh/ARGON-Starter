@@ -84,8 +84,8 @@ export default function RootLayout() {
             <StatusBar style={isDark ? "light" : "dark"} />
             {/* <Slot /> */}
             <Stack screenOptions={{headerShown: false}}>
-              <Stack.Screen name="onboarding" options={{headerShown: false}} />
               <Stack.Screen name="auth" options={{headerShown: false}} />
+              <Stack.Screen name="onboarding" options={{headerShown: false}} />
               <Stack.Screen name="(tabs)" options={{headerShown: false}} />
             </Stack>
           </AuthProvider>
