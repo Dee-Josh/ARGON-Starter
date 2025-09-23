@@ -1,8 +1,8 @@
 import { useAuth } from "@/lib/context/AuthContext";
 import { router } from "expo-router";
 import React, { useState } from "react";
-import { Image, ImageBackground, KeyboardAvoidingView, Platform, StyleSheet, View, Pressable } from 'react-native';
-import { Provider as PaperProvider, Text, TextInput, Button } from 'react-native-paper';
+import { Image, ImageBackground, KeyboardAvoidingView, Platform, Pressable, StyleSheet, TextInput, View } from 'react-native';
+import { Button, Provider as PaperProvider, Text } from 'react-native-paper';
 import Toast from 'react-native-toast-message';
 
 // later you can return button to react native paper and use button instead of pressable
@@ -100,15 +100,8 @@ export default function LogIn() {
                             // label="Name"
                             placeholder="Name"
                             keyboardType="default"
-                            mode="outlined"
                             autoCapitalize="none"
                             style={styles.input}
-                            theme={{
-                                colors: {
-                                    primary: colors.green,
-                                    outline: '#999999',
-                                }
-                            }}
                             onChangeText={updateEmail}
                         />
                         <TextInput
@@ -116,30 +109,16 @@ export default function LogIn() {
                             placeholder="Email"
                             // placeholder="example@gmail.com"
                             keyboardType="email-address"
-                            mode="outlined"
                             autoCapitalize="none"
-                            style={styles.input}
-                            theme={{
-                                colors: {
-                                    primary: colors.green,
-                                    outline: '#999999',
-                                }
-                            }}
+                            style={styles.input}      
                             onChangeText={updateEmail}
                         />
                         <TextInput
                             // label="Password"
                             placeholder="Password"
                             autoCapitalize="none"
-                            mode="outlined"
                             secureTextEntry
                             style={styles.input}
-                            theme={{
-                                colors: {
-                                    primary: colors.green,
-                                    outline: '#999999',
-                                }
-                            }}
                             onChangeText={updatePassword}
                         />
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
@@ -191,8 +170,14 @@ const styles = StyleSheet.create({
     },
     input: {
         marginBottom: 15,
-        borderWidth: 0,
+        borderWidth: 1,
+        borderColor: "#999",
         backgroundColor: '#f5f5f5',
+        borderRadius: 10,
+        paddingTop: 15,
+        paddingBottom: 15,
+        paddingHorizontal: 15,
+        fontSize: 16,
     },
     btn: {
         marginTop: 20,
@@ -201,7 +186,7 @@ const styles = StyleSheet.create({
     },
     googleBtn: {
         backgroundColor: '#f5f5f5',
-        paddingVertical: 10,
+        paddingVertical: 15,
         borderWidth: 1,
         borderRadius: 10,
         borderColor: '#999999',
