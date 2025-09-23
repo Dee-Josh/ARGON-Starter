@@ -9,6 +9,13 @@ import Toast from 'react-native-toast-message';
 // LOGIN AND SIGN UP SCREEN
 export default function LogIn() {
 
+    const colors = {
+        green: '#58B65A',
+        darkBlue: '#1B242D',
+        white: '#FFF',
+    }
+
+
     function showToast(type: string, error: string) {
         Toast.show({
             type: type,
@@ -83,18 +90,18 @@ export default function LogIn() {
                     <Toast />
                     <View>
                         <Text style={styles.welcomeText} variant="headlineMedium">
-                            {isSignUp ? "Create Account" : "Welcome Back"}
+                            {isSignUp ? "Create Account" : "Welcome Back!"}
                         </Text>
                         <TextInput
                             label="Email"
                             placeholder="example@gmail.com"
                             keyboardType="email-address"
-                            mode="outlined"
+                            // mode="outlined"
                             autoCapitalize="none"
                             style={styles.input}
                             theme={{
                                 colors: {
-                                    primary: '#009688',
+                                    primary: colors.green,
                                     outline: '#999999',
                                 }
                             }}
@@ -103,12 +110,12 @@ export default function LogIn() {
                         <TextInput
                             label="Password"
                             autoCapitalize="none"
-                            mode="outlined"
+                            // mode="outlined"
                             secureTextEntry
                             style={styles.input}
                             theme={{
                                 colors: {
-                                    primary: '#009688',
+                                    primary: colors.green,
                                     outline: '#999999',
                                 }
                             }}
@@ -151,6 +158,7 @@ const styles = StyleSheet.create({
     },
     input: {
         marginBottom: 15,
+        borderWidth: 0,
     },
     btn: {
         marginTop: 20,
