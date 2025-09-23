@@ -124,7 +124,7 @@ export default function LogIn() {
                             style={[styles.input, styles.lastInput]}
                             onChangeText={updatePassword}
                         />
-                        <Pressable onPress={()=>{router.push('/auth/ForgotPassword')}} style={styles.forgotPasswordContainer}><Text style={{fontSize: 12, color: colors.darkBlue}}>Forgot Password?</Text></Pressable>
+                        <Pressable onPress={()=>{router.push('/auth/ForgotPassword')}} style={styles.forgotPasswordContainer}><Text style={{fontSize: 11.5, color: colors.darkBlue}}>{!isSignUp&&"Forgot Password?"}</Text></Pressable>
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
                         <Pressable style={styles.googleBtn} onPress={() => {}}><Text style={{fontSize: 16}}>Continue with Google</Text></Pressable>
                         <Button style={styles.haveAccount} textColor={colors.darkBlue}onPress={() => {
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
     },
     forgotPasswordContainer: {
         alignItems: 'flex-end',
-        height: 18,
+        height: 20,
     },
     googleBtn: {
         backgroundColor: '#f5f5f5',
