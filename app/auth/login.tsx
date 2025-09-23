@@ -121,10 +121,10 @@ export default function LogIn() {
                             placeholder="Password"
                             autoCapitalize="none"
                             secureTextEntry
-                            style={styles.input}
+                            style={[styles.input, styles.lastInput]}
                             onChangeText={updatePassword}
                         />
-                        <View><Text>Forgot Password</Text></View>
+                        <Pressable onPress={()=>{router.push('/auth/ForgotPassword')}} style={styles.forgotPasswordContainer}><Text style={{fontSize: 12, color: colors.darkBlue}}>Forgot Password?</Text></Pressable>
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
                         <Pressable style={styles.googleBtn} onPress={() => {}}><Text style={{fontSize: 16}}>Continue with Google</Text></Pressable>
                         <Button style={styles.haveAccount} textColor={colors.darkBlue}onPress={() => {
@@ -181,8 +181,15 @@ const styles = StyleSheet.create({
         padding: 18,
         fontSize: 16,
     },
+    lastInput: {
+        marginBottom: 0
+    },
     isFocused: {
         borderColor: colors.green,
+    },
+    forgotPasswordContainer: {
+        alignItems: 'flex-end',
+        height: 18,
     },
     googleBtn: {
         backgroundColor: '#f5f5f5',
