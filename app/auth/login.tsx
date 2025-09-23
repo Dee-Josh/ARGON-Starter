@@ -85,18 +85,19 @@ export default function LogIn() {
 
     return (
         <PaperProvider>
-            <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
-                <ImageBackground source={require('@/assets/gradient-bg.png')} style={styles.imageBackground}>
+            <ImageBackground source={require('@/assets/gradient-bg.png')} resizeMode="cover" style={styles.imageBackground}>
+                <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === "ios" ? "padding" : "height"}>
                     <Toast />
                     <View>
+                        <Image source={require('@/assets/argon-logo.png')} style={styles.argonLogo} />
                         <Text style={styles.welcomeText} variant="headlineMedium">
-                            {isSignUp ? "Create Account" : "Welcome Back!"}
+                            {isSignUp ? "Create Your Account" : "Welcome Back!"}
                         </Text>
                         <TextInput
-                            label="Email"
-                            placeholder="example@gmail.com"
-                            keyboardType="email-address"
-                            // mode="outlined"
+                            // label="Name"
+                            placeholder="John Doe"
+                            keyboardType="default"
+                            mode="outlined"
                             autoCapitalize="none"
                             style={styles.input}
                             theme={{
@@ -108,9 +109,25 @@ export default function LogIn() {
                             onChangeText={updateEmail}
                         />
                         <TextInput
-                            label="Password"
+                            // label="Email"
+                            placeholder="example@gmail.com"
+                            keyboardType="email-address"
+                            mode="outlined"
                             autoCapitalize="none"
-                            // mode="outlined"
+                            style={styles.input}
+                            theme={{
+                                colors: {
+                                    primary: colors.green,
+                                    outline: '#999999',
+                                }
+                            }}
+                            onChangeText={updateEmail}
+                        />
+                        <TextInput
+                            // label="Password"
+                            placeholder="Password"
+                            autoCapitalize="none"
+                            mode="outlined"
                             secureTextEntry
                             style={styles.input}
                             theme={{
@@ -121,21 +138,17 @@ export default function LogIn() {
                             }}
                             onChangeText={updatePassword}
                         />
-                        <Text style={{ color: 'red' }}>{tempErrDisplay}</Text>
+                        {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
+                        <Button textColor="black" style={styles.googleBtn} mode="outlined" onPress={() => {}}>Continue with Google</Button>
                         <Button style={styles.btn} mode="contained" onPress={() => {
                             // router.replace("/(tabs)");
                             // router.navigate("/(tabs)");
                             handleAuth();
                         }}>{isSignUp ? "Sign Up" : "Sign In"}</Button>
-                        <Button textColor="#009688" onPress={() => {
-                            setIsSignUp(!isSignUp);
-                        }}
-                        >
-                            {isSignUp ? "Already have an account? Sign In." : "Don't have an account? Sign Up."}
-                        </Button>
+                       
                     </View>
-                </ImageBackground>
-            </KeyboardAvoidingView>
+                </KeyboardAvoidingView>
+            </ImageBackground>
         </PaperProvider>
     )
 }
@@ -144,24 +157,39 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#f5f5f5',
+        // backgroundColor: '#f5f5f5',
+        padding: 15,
     },
     imageBackground: {
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#f5f5f5',
-        padding: 15,
+        // backgroundColor: 'green',
+        // height: 20,
+    },
+    argonLogo: {
+       resizeMode: 'contain', 
+       width: 150, 
+       height: 150,
+       alignSelf: 'center',
+       marginBottom: 30,
     },
     welcomeText: {
         textAlign: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+        fontWeight: 'bold',
     },
     input: {
         marginBottom: 15,
         borderWidth: 0,
+        backgroundColor: '#f5f5f5',
     },
     btn: {
         marginTop: 20,
         backgroundColor: '#009688'
+    },
+    googleBtn: {
+        backgroundColor: '#f5f5f5',
+        paddingVertical: 5,
     },
 })
