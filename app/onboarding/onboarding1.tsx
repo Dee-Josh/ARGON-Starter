@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   argonLogo: {
-    height: 320,
+    height: 300,
     width: 280,
     resizeMode: 'contain',
     marginRight: 1
@@ -49,21 +49,22 @@ const styles = StyleSheet.create({
   argonText: {
     color: colors.darkBlue,
     fontWeight: 'bold',
-    fontSize: 50,
+    fontSize: 40,
     marginTop: 30,
+    marginBottom: -10,
   },
   description: {
     fontWeight: 'bold',
   },
   sloganText: {
     color: colors.darkBlue,
-    fontSize: 24,
-    marginTop: 10,
+    fontSize: 22,
+    fontWeight: 'bold',
   },
   button: {
     backgroundColor: colors.green,
     width: '80%',
-    marginTop: 120,
+    marginTop: 190,
     paddingVertical: 8,
     borderRadius: 100
   },

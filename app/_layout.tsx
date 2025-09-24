@@ -40,7 +40,7 @@ export default function RootLayout() {
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hideAsync();
-    }, 1000);
+    }, 500);
   }, []);
 
   // FOR DECIDING WHERE TO START (ROUTE GUARD)
