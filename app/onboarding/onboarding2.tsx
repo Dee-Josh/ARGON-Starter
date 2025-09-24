@@ -1,7 +1,6 @@
-import { View, Text, StyleSheet, Image, Pressable } from "react-native";
-import { Button } from "react-native-paper";
-import { useRouter } from "expo-router";
 import { ImageBackground } from "expo-image";
+import { useRouter } from "expo-router";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 export default function OnboardingScreen2() {
   const router = useRouter();
@@ -10,7 +9,7 @@ export default function OnboardingScreen2() {
     <View style={styles.container}>
       <ImageBackground style={styles.imageBg} source={require('@/assets/gradient-bg.png')}>
         <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} />
-        <Image source={require('@/assets/onboard2.png')} style={styles.onboardCard} />
+        <Image source={require('@/assets/onboard22.png')} style={styles.onboardCard} />
         <Pressable style={styles.button} onPress={() => { router.push('/onboarding/onboarding3') }}><Text style={styles.buttonText}>Continue</Text></Pressable>
       </ImageBackground>
     </View>
@@ -42,10 +41,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
   },
-  onboardCard: { width: 310, 
-    height: 339, 
+  onboardCard: { 
+    width: 320, 
+    height: 320, 
     resizeMode: 'contain', 
-    marginTop: 150, 
+    marginTop: 170, 
     borderRadius: 20, 
     borderWidth: 1 
   },
