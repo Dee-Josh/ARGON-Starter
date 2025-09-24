@@ -3,7 +3,7 @@ import { Button } from "react-native-paper";
 import { useRouter } from "expo-router";
 import { ImageBackground } from "expo-image";
 
-export default function OnboardingScreen2() {
+export default function OnboardingScreen3() {
   const router = useRouter();
 
   return (

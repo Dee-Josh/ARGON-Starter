@@ -14,8 +14,7 @@ export default function OnboardingScreen1() {
         <Text style={styles.argonText}>ARGON</Text>
         {/* <Text style={styles.description}>All-Round Giants Outstanding Network</Text> */}
         <Text style={styles.sloganText}>Raising Balanced Giants</Text>
-
-        <Button mode="contained" style={styles.button} onPress={() => router.replace("/onboarding/onboarding2")}><Text style={styles.buttonText}>Get Started</Text></Button>
+        <Button mode="contained" style={styles.button} onPress={() => router.push("/onboarding/onboarding2")}><Text style={styles.buttonText}>Get Started</Text></Button>
       </ImageBackground>
     </View>
   );
