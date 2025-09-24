@@ -35,7 +35,7 @@ export default function LogIn() {
         }
     }
 
-    const [isSignUp, setIsSignUp] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(true);
     const [email, updateEmail] = useState("");
     const [password, updatePassword] = useState("");
     const [error, setError] = useState("");
