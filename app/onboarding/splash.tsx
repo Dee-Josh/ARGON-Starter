@@ -1,11 +1,13 @@
 import { useRouter } from "expo-router";
-import { Image, ImageBackground, StyleSheet, View } from "react-native";
-import { Button, Text } from "react-native-paper";
+import { Image, StyleSheet, View } from "react-native";
 
 export default function OnboardingScreen1() {
   const router = useRouter();
-  console.log('Onboarding1 mounted');
+  console.log('Splash mounted');
 
+  setTimeout(() => {
+    router.replace('/onboarding/onboarding1');
+  }, 5000);
 
   return (
     <View style={styles.container}>
@@ -29,7 +31,8 @@ const styles = StyleSheet.create({
   },
   splash: {
     resizeMode: 'cover',
-    height: 'auto'
+    height: '100%',
+    width: '100%'
   },
   
 })
