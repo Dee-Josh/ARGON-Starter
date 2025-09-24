@@ -10,7 +10,9 @@ export default function OnboardingScreen3() {
     <View style={styles.container}>
       <ImageBackground style={styles.imageBg} source={require('@/assets/gradient-bg.png')}>
         <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} />
-        <Image source={require('@/assets/onboard2.png')} style={styles.onboardCard} />
+        <Image source={require('@/assets/onboard33.png')} style={styles.onboardCard} />
+        <Text style={styles.bigText}>Small Steps, Big Growth</Text>
+        <Text style={styles.description}>Turn consistent daily habits into a balanced and fulfiling life.</Text>
         <Pressable style={styles.button} onPress={() => { router.push('/onboarding/finish-onboarding') }}><Text style={styles.buttonText}>Continue</Text></Pressable>
       </ImageBackground>
     </View>
@@ -42,15 +44,29 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
   },
-  onboardCard: { width: 310, 
+  onboardCard: { 
+    width: 310, 
     height: 339, 
     resizeMode: 'contain', 
-    marginTop: 150, 
+    marginTop: 40, 
     borderRadius: 20, 
-    borderWidth: 1 
+    borderWidth: 1,
+    borderColor: '#5e5a5aff',
+  },
+  bigText: { 
+    fontWeight: 'bold',
+    fontSize: 27.5,
+    letterSpacing: .03,
+    marginTop: 10,
+    // borderWidth: 1,
+  },
+  description: { 
+    fontSize: 18,
+    marginTop: 30,
+    color: '#5e5a5aff',
   },
   button: {
-    marginTop: 90,
+    marginTop: 75,
     backgroundColor: colors.green,
     paddingVertical: 12,
     borderRadius: 100,

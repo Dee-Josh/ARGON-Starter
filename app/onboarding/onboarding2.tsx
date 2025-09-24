@@ -11,7 +11,7 @@ export default function OnboardingScreen2() {
       <ImageBackground style={styles.imageBg} source={require('@/assets/gradient-bg.png')}>
         <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} />
         <Image source={require('@/assets/onboard2.png')} style={styles.onboardCard} />
-        <Pressable style={styles.button} onPress={() => { router.push('/onboarding/finish-onboarding') }}><Text style={styles.buttonText}>Continue</Text></Pressable>
+        <Pressable style={styles.button} onPress={() => { router.push('/onboarding/onboarding3') }}><Text style={styles.buttonText}>Continue</Text></Pressable>
       </ImageBackground>
     </View>
   );
