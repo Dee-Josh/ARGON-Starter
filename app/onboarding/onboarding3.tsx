@@ -9,7 +9,7 @@ export default function OnboardingScreen3() {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.imageBg} source={require('@/assets/gradient-bg.png')}>
-        <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} />
+        {/* <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} /> */}
         <Image source={require('@/assets/onboard33.png')} style={styles.onboardCard} />
         <Text style={styles.bigText}>Small Steps, Big Growth</Text>
         <Text style={styles.description}>Turn consistent daily habits into a balanced and fulfiling life.</Text>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     width: 310, 
     height: 339, 
     resizeMode: 'contain', 
-    marginTop: 40, 
+    marginTop: 40 + 65, 
     borderRadius: 20, 
     borderWidth: 1,
     borderColor: '#5e5a5aff',
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     color: '#5e5a5aff',
   },
   button: {
-    marginTop: 78,
+    marginTop: 78 + 10,
     backgroundColor: colors.green,
     paddingVertical: 12,
     borderRadius: 100,
