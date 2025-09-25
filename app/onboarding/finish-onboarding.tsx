@@ -9,8 +9,8 @@ export default function FinishOnboarding() {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.imageBg} source={require('@/assets/gradient-bg.png')}>
-        <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} />
-        <View style={{borderWidth: 1, marginTop: 10, borderRadius: 10, overflow: 'hidden', borderColor: '#999', }}>
+        {/* <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} /> */}
+        <View style={styles.cardView}>
           <Image source={require('@/assets/finishOnboard-1.png')} style={styles.onboardCard1} />
           <Image source={require('@/assets/finishOnboard-2.png')} style={styles.onboardCard2} />
         </View>
@@ -48,6 +48,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
   },
+  cardView:{
+    borderWidth: 1, 
+    marginTop: 10 + 65, 
+    borderRadius: 10, 
+    overflow: 'hidden', 
+    borderColor: '#999', 
+  },
   onboardCard1: {
     width: 320,
     height: 169,
@@ -79,7 +86,7 @@ const styles = StyleSheet.create({
     color: '#5e5a5aff',
   },
   button: {
-    marginTop: 49,
+    marginTop: 49 + 10,
     backgroundColor: colors.green,
     paddingVertical: 12,
     borderRadius: 100,
