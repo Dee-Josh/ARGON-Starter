@@ -8,7 +8,7 @@ export default function OnboardingScreen2() {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.imageBg} source={require('@/assets/gradient-bg.png')}>
-        <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} />
+        {/* <Image source={require('@/assets/argon-logo.png')} style={{ width: 65, height: 75, resizeMode: 'contain', alignSelf: 'flex-start', }} /> */}
         <Image source={require('@/assets/onboard22.png')} style={styles.onboardCard} />
         <Pressable style={styles.button} onPress={() => { router.push('/onboarding/onboarding3') }}><Text style={styles.buttonText}>Continue</Text></Pressable>
       </ImageBackground>
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
     width: 320, 
     height: 320, 
     resizeMode: 'contain', 
-    marginTop: 170, 
+    marginTop: 170 + 65, 
     borderRadius: 20, 
     borderWidth: 1 
   },
   button: {
-    marginTop: 90,
+    marginTop: 90 + 10,
     backgroundColor: colors.green,
     paddingVertical: 12,
     borderRadius: 100,
