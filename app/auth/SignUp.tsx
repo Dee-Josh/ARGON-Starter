@@ -73,15 +73,13 @@ export default function SignUp() {
         } else {
             const error = await signIn(email, password);
             if (error) {
-                setError(error);
-                showToast("error", error);
-                setTempErrDisplay(error);
-                return
+              setError(error);
+              showToast("error", error);
+              setTempErrDisplay(error);
+              return
             }
-
-            router.replace("/")
+          router.replace("/")
         }
-
     }
 
     return (
@@ -130,9 +128,7 @@ export default function SignUp() {
                             {isSignUp ? "Already have an account? Sign In." : "Don't have an account? Sign Up."}
                         </Button>
                         <Pressable style={styles.btn} onPress={() => {
-                            // router.replace("/(tabs)");
-                            // router.navigate("/(tabs)");
-                            handleAuth();
+                          handleAuth();
                         }}><Text style={{fontWeight: 'bold', color: '#fff', fontSize: 20}}>Sign Up</Text></Pressable>
                        
                     </View>
