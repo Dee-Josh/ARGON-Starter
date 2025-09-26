@@ -55,7 +55,7 @@ export default function SignUp() {
           // setError("Password cannot be less than 8.");
           showToast("error", "Password cannot be less than 8.");
           setTempErrDisplay("Password cannot be less than 8.");
-            return;
+          return;
         } else {
           setError("");
         }
@@ -117,6 +117,14 @@ export default function SignUp() {
                             secureTextEntry
                             style={[styles.input, styles.lastInput]}
                             onChangeText={updatePassword}
+                        />
+                        <TextInput
+                          // label="Password"
+                          placeholder="Confirm Password"
+                          autoCapitalize="none"
+                          secureTextEntry
+                          style={[styles.input, styles.lastInput]}
+                          onChangeText={updatePassword}
                         />
                         <Pressable onPress={()=>{router.push('/auth/ForgotPassword')}} style={styles.forgotPasswordContainer}><Text style={{fontSize: 11.5, color: colors.darkBlue}}>{!isSignUp&&"Forgot Password?"}</Text></Pressable>
                         {/* <Text style={{ color: 'red' }}>{tempErrDisplay}</Text> */}
