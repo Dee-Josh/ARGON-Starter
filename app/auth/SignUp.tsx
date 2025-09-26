@@ -101,7 +101,6 @@ export default function SignUp() {
                             autoCapitalize="none"
                             style={[styles.input, isInputFocused&&styles.isFocused]}
                             onChangeText={updateEmail}
-                            // onFocus={()=>{setIsInputFocused(true)}}
             
                         />
                         <TextInput
