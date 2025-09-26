@@ -47,37 +47,37 @@ export default function SignUp() {
 
     async function handleAuth() {
         if (email === "" || password === "") {
-            // setError("Please fill all fields."); 
-            showToast("error", "Please fill all fields.");
-            setTempErrDisplay("Please fill all fields.");
-            return;
+          // setError("Please fill all fields."); 
+          showToast("error", "Please fill all fields.");
+          setTempErrDisplay("Please fill all fields.");
+          return;
         } else if (password.length < 8) {
-            // setError("Password cannot be less than 8.");
-            showToast("error", "Password cannot be less than 8.");
-            setTempErrDisplay("Password cannot be less than 8.");
+          // setError("Password cannot be less than 8.");
+          showToast("error", "Password cannot be less than 8.");
+          setTempErrDisplay("Password cannot be less than 8.");
             return;
         } else {
-            setError("")
+          setError("");
         }
 
         if (isSignUp) {
             // showToast("error", "creating account");
             const error = await signUp(email, password);
             if (error) {
-                // setError(error);
-                showToast("error", error);
-                setTempErrDisplay(error);
-                return
-            }
-            router.replace("/(tabs)")
-        } else {
-            const error = await signIn(email, password);
-            if (error) {
-              setError(error);
+              // setError(error);
               showToast("error", error);
               setTempErrDisplay(error);
               return
             }
+            router.replace("/(tabs)")
+        } else {
+          const error = await signIn(email, password);
+          if (error) {
+            setError(error);
+            showToast("error", error);
+            setTempErrDisplay(error);
+            return
+          }
           router.replace("/")
         }
     }
