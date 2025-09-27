@@ -8,6 +8,7 @@ export default function ForgotPassword() {
     <ImageBackground source={require('@/assets/gradient-bg.png')}>
       <View style={styles.container}>
         <Text style={{ fontSize: 24 }}>FORGOT PASSWORD</Text>
+        <Text>Enter Email</Text>
         <Button title="Next" />
       </View>
     </ImageBackground>
