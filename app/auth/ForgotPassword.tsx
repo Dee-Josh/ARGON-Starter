@@ -1,4 +1,4 @@
-import { View, Text, Button, StyleSheet, ImageBackground } from "react-native";
+import { View, Text, Button, StyleSheet, ImageBackground, TextInput } from "react-native";
 import { useRouter } from "expo-router";
 
 export default function ForgotPassword() {
@@ -8,7 +8,9 @@ export default function ForgotPassword() {
     <ImageBackground source={require('@/assets/gradient-bg.png')}>
       <View style={styles.container}>
         <Text style={{ fontSize: 24 }}>FORGOT PASSWORD</Text>
-        <Text>Enter Email</Text>
+        <TextInput 
+          placeholder=""
+        />
         <Button title="Next" />
       </View>
     </ImageBackground>
