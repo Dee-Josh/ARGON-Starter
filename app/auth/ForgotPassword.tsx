@@ -12,6 +12,7 @@ export default function ForgotPassword() {
           placeholder=""
         />
         <Button title="Next" />
+        {/* then verification  code */}
       </View>
     </ImageBackground>
   );
