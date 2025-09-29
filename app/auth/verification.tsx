@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ActivityIndicator, StyleSheet, Image } from "react-native";
 
-export default function SplashScreen() {
+export default function Verification() {
   return (
     <View style={styles.container}>
       {/* Logo (replace source with your logo asset) */}
