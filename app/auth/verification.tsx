@@ -4,20 +4,13 @@ import { View, Text, ActivityIndicator, StyleSheet, Image } from "react-native";
 export default function Verification() {
   return (
     <View style={styles.container}>
-      {/* Logo (replace source with your logo asset) */}
       <Image
         source={require("../assets/argon-logo.png")}
         style={styles.logo}
         resizeMode="contain"
       />
-
-      {/* Brand name */}
       <Text style={styles.brand}>ARGON</Text>
-
-      {/* Tagline */}
       <Text style={styles.tagline}>All Round Giants Outstanding Network</Text>
-
-      {/* Loading Spinner */}
       <ActivityIndicator size="large" color="#0066cc" style={{ marginTop: 30 }} />
     </View>
   );
