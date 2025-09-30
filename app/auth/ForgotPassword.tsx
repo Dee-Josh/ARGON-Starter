@@ -1,5 +1,5 @@
-import { View, Text, Button, StyleSheet, ImageBackground, TextInput } from "react-native";
 import { useRouter } from "expo-router";
+import { ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function ForgotPassword() {
   const router = useRouter();
@@ -11,7 +11,9 @@ export default function ForgotPassword() {
         <TextInput 
           placeholder=""
         />
-        <Button title="Next" />
+        <Pressable>
+          <Text>Send Code</Text>
+        </Pressable>
         {/* then verification  code */}
       </View>
     </ImageBackground>
