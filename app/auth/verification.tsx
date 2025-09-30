@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ActivityIndicator, StyleSheet, Image, TextInput } from "react-native";
+import { ActivityIndicator, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Verification() {
   return (
@@ -11,8 +11,11 @@ export default function Verification() {
       />
      <TextInput
         placeholder="code"
-        
+        keyboardType="numeric"
       />
+      <Pressable>
+        <Text>Verify</Text>        
+      </Pressable>
       <ActivityIndicator size="large" color="#0066cc" style={{ marginTop: 30 }} />
     </View>
   );
