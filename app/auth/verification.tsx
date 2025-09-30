@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ActivityIndicator, StyleSheet, Image } from "react-native";
+import { View, Text, ActivityIndicator, StyleSheet, Image, TextInput } from "react-native";
 
 export default function Verification() {
   return (
@@ -9,8 +9,10 @@ export default function Verification() {
         style={styles.logo}
         resizeMode="contain"
       />
-      <Text style={styles.brand}>ARGON</Text>
-      <Text style={styles.tagline}>All Round Giants Outstanding Network</Text>
+     <TextInput
+        placeholder="code"
+        
+      />
       <ActivityIndicator size="large" color="#0066cc" style={{ marginTop: 30 }} />
     </View>
   );
